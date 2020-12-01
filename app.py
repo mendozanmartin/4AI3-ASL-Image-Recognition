@@ -1,5 +1,5 @@
 # allow both GET and POST requests
-from flask import Flask, request, send_from_directory
+from flask import Flask, request, render_template
 import numpy as np
 
 from keras.models import load_model
@@ -32,7 +32,7 @@ def landing_page():
     img_path = "test images/Y Test.jpg"
     img = image.load_img(img_path, target_size=(64,64)) # resize image
     print(predict(img))
-    return "<h1>WELCOME TO THE CIRCUS</h1>"
+    return send_from_directory("static", "public")
 
 if __name__ == '__main__':
     app.debug = True
