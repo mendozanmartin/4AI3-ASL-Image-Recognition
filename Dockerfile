@@ -8,6 +8,7 @@ RUN pip install -r requirements.txt
 
 COPY . /usr/src/flask_app
 
-CMD ["flask", "run", "--host", "0.0.0.0"]
-
+# CMD ["flask", "run", "--host", "0.0.0.0"]\
 EXPOSE 5000
+RUN chmod +x ./entrypoint.sh
+ENTRYPOINT ["sh", "entrypoint.sh"]

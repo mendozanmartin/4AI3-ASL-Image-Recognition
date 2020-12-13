@@ -1,0 +1,5 @@
+runtime: python38
+entrypoint: gunicorn -b :$PORT app:app --timeout 120
+instance_class: F4_HIGHMEM
+env_variables:
+  GOOGLE_APPLICATION_CREDENTIALS: "asl-image-recognition-06bf33fe04df.json"

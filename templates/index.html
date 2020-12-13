@@ -1,0 +1,106 @@
+<html lang=”en”>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Camera app">
+    <meta name="apple-mobile-web-app-title" content="Camera app">
+
+    <!-- Name of the app -->
+    <title>Camera App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Link to site manifest -->
+    <link rel="manifest" href="{{ url_for('static', filename='misc/site.webmanifest') }}">
+
+    <!-- Links to icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="{{ url_for('static', filename='misc/site.webmanifest') }}">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#603cba">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Link to main style sheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body onload="loadFunction()">
+    <div>
+        <h4 class="header text-center">ASL Image Recognition Teacher</h4>
+    </div>
+
+    <!-- Camera -->
+    <main id="camera">
+
+        <!-- Camera sensor -->
+        <canvas id="camera--sensor"></canvas>
+
+        <div class="row">
+            <!-- Camera output -->
+            <img src="//:0" alt="" id="camera--output">
+
+            <div class="col-4 game-container">
+
+                <!-- Letter -->
+                <div class="random-letter-container">
+                    <div class="ml-3">
+                        <span id="timespan"></span>
+                    </div>
+
+                    <div class="text-center p-0 m-0 random-letter-box">
+                        <span class="random-letter"></span>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="buttons text-center">
+                    <input id="Start" type="button" value="Start" onclick="startAndGen()">
+                    <input id="Next" type="button" value="Next" onclick="nextAndGen()">
+                    <input id="Reset" type="button" value="Reset" onclick="cdreset()">
+                </div>
+
+            </div>
+
+            <div class="col-8 d-flex justify-content-center">
+                <div>
+
+                </div>
+                <div class="text-center mt-3">
+                    <h4 id="indicator">You currently have: <span id="numPoints"> 0</span> points!</h4>
+                    <div class="text-center mt-3">
+                        <h2 id="indicator">The AI Model Predicted the Letter: <span id="prediction"> </span></h2>
+                    </div>
+                </div>
+                <!-- Camera view -->
+                <video id="camera--view" autoplay playsinline>
+                </video>
+
+
+                <!-- Overlay Box-->
+                <canvas id="overlayBox">
+
+                </canvas>
+                <!-- Camera trigger -->
+                <!-- <button id="camera--trigger">Take a picture</button> -->
+            </div>
+        </div>
+    </main>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Reference to your JavaScript file -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+    <!-- Reference to adapter.js -->
+    <script src="{{ url_for('static', filename='js/adapter-min.js') }}"></script>
+
+</body>
+
+</html>

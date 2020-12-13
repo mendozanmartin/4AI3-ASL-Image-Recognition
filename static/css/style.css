@@ -1,0 +1,153 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#camera,
+#camera--view,
+#camera--sensor,
+#camera--output {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  /* object-fit: cover; */
+}
+
+#camera--view {
+  height: 65%;
+  width: 50%;
+  margin-top: 8vw;
+  padding: 0px;
+}
+
+#camera--sensor {
+  visibility: hidden;
+}
+
+#camera--view,
+#camera--sensor,
+#camera--output {
+  transform: scaleX(-1);
+  filter: FlipH;
+}
+
+#camera--trigger {
+  width: 200px;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  border-radius: 30px;
+  border: none;
+  padding: 15px 20px;
+  text-align: center;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  position: fixed;
+  bottom: 30px;
+  left: calc(50% - 100px);
+}
+
+.taken {
+  height: 100px !important;
+  width: 100px !important;
+  transition: all 0.5s ease-in;
+  border: solid 3px white;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+}
+#overlayBox {
+  margin-left: 50vw;
+  position: fixed;
+  height: 250px;
+  width: 250px;
+  z-index: 2;
+  /* border: 3px solid red; */
+}
+
+.random-letter {
+  font-size: 200px;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 0px;
+}
+
+.random-letter-container {
+  height: 450px;
+  border-style: solid;
+  border-color: rgb(52, 52, 52);
+  border-width: 2px;
+  margin-top: 80px;
+}
+
+.random-letter-box {
+  margin-bottom: 300px;
+}
+
+#timespan {
+  display: inline-flex;
+  font-family: sans-serif;
+  margin-top: 5vh;
+  font-size: 30px;
+  border-radius: 50%;
+  border: none;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+}
+
+.buttons {
+  display: flex;
+  flex-flow: row;
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  position: relative;
+  /* border-style: solid; */
+}
+
+#start:hover,
+#next:hover,
+#reset:hover {
+  background-color: lightskyblue;
+  color: white;
+  cursor: pointer;
+}
+
+#start,
+#next,
+#reset {
+  width: 200px;
+  font-size: 16px;
+  border-radius: 30px;
+  border: none;
+  padding: 15px 20px;
+  transition-duration: 0.4s;
+  background-color: black;
+  color: white;
+}
+
+#start:disabled,
+#next:disabled,
+#reset:disabled {
+  background-color: lightgrey;
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+
+input[type="button"] {
+  margin: 10px;
+}
+
+.header {
+  background-color: rgb(45, 45, 45);
+  color: white;
+  padding: 10px;
+}
+
+.game-container {
+  padding-left: 10vw;
+}
